@@ -23,6 +23,7 @@ Transação(#codigo, data, #codigoLoja, #matriculaVendedor)
 Loja(#codigo, endereço, #codigoCidade)
 Vendedor(#matricula, nome)
 Cidade(#codigo, siglaUF)
+
 c) Cliente(#codigo, nome, numerorg)
 email(#email, #codigo)
 Animal(#codigo, nome, especie, raça, caraterísticas)
