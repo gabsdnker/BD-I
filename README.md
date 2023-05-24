@@ -1,6 +1,6 @@
 # Banco de Dados I
 
-## ✔️ Técnicas e tecnologias utilizadas
+## ✔️ Assuntos Estudados
 
 - ``Introdução a Banco de Dados``
 - ``Independência de Dados e Arquitetura``
