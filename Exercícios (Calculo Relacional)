@@ -22,10 +22,10 @@ c) Exibir os nomes dos clientes que realizaram corridas em todos os taxis da mar
 d) Listar as placas dos taxis que realizaram corridas para todos os clientes.
 
 RESPOSTAS:
-a) { c.Nome | Cliente(c) ∧ (∃co)(Corrida(co) ∧ co.CPF = c.CPF ∧ co.Data LIKE '%2020%') }
+a) { t.Nome | CLIENTE(t) ∧ (∃c)(CORRIDA(c) ∧ t.CPF = c.CPF ∧ ((∃v) (TAXI(v)∧ c.Placa=v.Placa ∧ (c.Data >= 01/01/2020 ∧ c.Data =< 31/12/2020)) }
 
-b) { t.Placa | Taxi(t) ∧ (∃co)(Corrida(co) ∧ co.Placa = t.Placa ∧ (co.Data LIKE '%2021%' OR co.Data LIKE '%2023%')) }
+b) { t.Placa | TAXI(t) ∧ (∃c)(CORRIDA(c) ∧ t.Placa = c.Placa ∧ (c.Data >= 01/01/2021 ∧ c.Data =< 31/12/2021) v (c.Data >= 01/01/2023 ∧ c.Data =< 31/12/2023))) }
 
-c) { c.Nome | Cliente(c) ∧ (∀t)(Taxi(t) ∧ t.Marca = 'Fiat' → (∃co)(Corrida(co) ∧ co.CPF = c.CPF ∧ co.Placa = t.Placa)) }
+c) { t.Nome | CLIENTE(t) ∧ (∀v) não(TAXI(v) ∧ não(v.Marca = 'Fiat') ∧ (∃c)(CORRIDA(c) ∧ v.Placa = c.Placa ∧ t.CPF = c.CPF) }
 
-d) { t.Placa | Taxi(t) ∧ (∀c)(Cliente(c) → (∃co)(Corrida(co) ∧ co.CPF = c.CPF ∧ co.Placa = t.Placa)) }
+d) { t.Placa | TAXI(t) ∧ (∀c)(CLIENTE(c) → (∃co)(CORRIDA(co) ∧ co.CPF = c.CPF ∧ co.Placa = t.Placa)) }
