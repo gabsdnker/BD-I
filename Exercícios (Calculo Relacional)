@@ -28,4 +28,4 @@ b) { t.Placa | TAXI(t) ∧ (∃c)(CORRIDA(c) ∧ t.Placa = c.Placa ∧ (c.Data >
 
 c) { t.Nome | CLIENTE(t) ∧ (∀v) não(TAXI(v) ∧ não(v.Marca = 'Fiat') ∧ (∃c)(CORRIDA(c) ∧ v.Placa = c.Placa ∧ t.CPF = c.CPF) }
 
-d) { t.Placa | TAXI(t) ∧ (∀c)(CLIENTE(c) → (∃co)(CORRIDA(co) ∧ co.CPF = c.CPF ∧ co.Placa = t.Placa)) }
+d) { t.Placa | TAXI(t) ∧ (∀c)(CLIENTE(c) ∧ (∃co)(CORRIDA(co) ∧ t.Placa = co.Placa ∧ c.CPF = co.CPF)) }
