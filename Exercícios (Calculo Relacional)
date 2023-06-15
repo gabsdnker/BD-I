@@ -29,9 +29,3 @@ b) { t.Placa | Taxi(t) ∧ (∃co)(Corrida(co) ∧ co.Placa = t.Placa ∧ (co.Da
 c) { c.Nome | Cliente(c) ∧ (∀t)(Taxi(t) ∧ t.Marca = 'Fiat' → (∃co)(Corrida(co) ∧ co.CPF = c.CPF ∧ co.Placa = t.Placa)) }
 
 d) { t.Placa | Taxi(t) ∧ (∀c)(Cliente(c) → (∃co)(Corrida(co) ∧ co.CPF = c.CPF ∧ co.Placa = t.Placa)) }
-
-2) A fim de auxiliá-los na resolução dessa lista, no que segue apresenta-se a expressão utilizada para a resolução do exercício desenvolvido na aula da semana passada – Exibir a(s) denominação(ões) do(s) projeto(s) no(s) qual(is) todos os colaboradores trabalharam por mais de 20 horas.
-
-  { t.denominacao | PROJETO(t) ∧ (∀a)(¬(ALOCACAO(a)) ∨ ¬(t.codigo = a.codigo) ∨((∃c)(COLABORADOR(c) ∧ c.cpf = a.cpf ∧ a.horas > 20))) }
-
-RESPOSTA: A expressão busca os projetos nos quais todos os colaboradores trabalharam por mais de 20 horas.
